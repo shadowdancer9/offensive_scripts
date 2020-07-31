@@ -1,5 +1,6 @@
 #!/bin/bash
-#Sistemas vulnerables: Kali, Parrot, Centos, RedHat, Debian
+#Sistemas vulnerables: Kali, Parrot, Centos, RedHat, Debian, Ubuntu
+#Made by s4vitar
 
 #Colours
 greenColour="\e[0;32m\033[1m"
