@@ -18,7 +18,7 @@ function ctrl_c(){
 
 function startAttack(){
 	tput civis && pgrep "$(cat /etc/shells | grep -v "shells" | tr '/' ' ' | awk 'NF{print $NF}' | sort -u | xargs | tr ' ' '|')" -u "$(id -u)" | while read shell_pid; do
-		if [ $(cat /proc/$shell_pid/comm 2>/dev/nulll) ] || [ $(pwdx $shell_pid 2>/dev/null)]; then
+		if [ $(cat /proc/$shell_pid/comm 2>/dev/null) ] || [ $(pwdx $shell_pid 2>/dev/null)]; then
 			echo -e "\n${yellowColour}[*] PID ->${endColour}${blueColour} $shell_pid${endColour}"
 			echo -e "${yellowColour}[*] Path ->${endColour}${blueColour} $(pwdx $shell_pid 2>/dev/null)${endColour}"
 			echo -e "${yellowColour}[*] Type -> ${endColour}${blueColour} $(cat /proc/$shell_pid/comm 2>/dev/null)${endColour}"
